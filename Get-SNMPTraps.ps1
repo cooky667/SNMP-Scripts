@@ -42,7 +42,7 @@ $SessionOption = New-CimSessionOption -Protocol Dcom ### Create variable for use
     }
 
     else {
-
+    
         $SNMPServiceStatus = "not installed"
         $SNMPTRAPServiceStatus = "not installed"
 
@@ -70,23 +70,23 @@ $SessionOption = New-CimSessionOption -Protocol Dcom ### Create variable for use
 
     if ($regKey -eq $null){
     
-    $SNMPCommunityString = "not valid"
+        $SNMPCommunityString = "not valid"
     
     }
     
     else{
     
-    $SNMPCommunityString = $CommunityString
-    $SNMPTrapDestination = $regkey.getvalue($regkey.getvaluenames()[0])
+        $SNMPCommunityString = $CommunityString
+        $SNMPTrapDestination = $regkey.getvalue($regkey.getvaluenames()[0])
     } 
 
     $Parameters = @{
 
-    ComputerName = $Computer
-    SNMPSvcStatus = $SNMPServiceStatus
-    SNMPTrapSvcStatus = $SNMPTRAPServiceStatus
-    SNMPTrapDestination = $SNMPTrapDestination
-    SNMPTrapCommunityString = $SNMPCommunityString
+        ComputerName = $Computer
+        SNMPSvcStatus = $SNMPServiceStatus
+        SNMPTrapSvcStatus = $SNMPTRAPServiceStatus
+        SNMPTrapDestination = $SNMPTrapDestination
+        SNMPTrapCommunityString = $SNMPCommunityString
     
     }
 
